@@ -1,0 +1,13 @@
+music_directory         "~/Music/"
+playlist_directory      "~/.mpd/playlists"
+db_file                 "~/.mpd/database"
+log_file                "~/.mpd/log"
+pid_file                "~/.mpd/pid"
+state_file              "~/.mpd/state"
+bind_to_address         "127.0.0.1"
+port                    "6600"
+audio_output {
+	type            "alsa"
+	name            "My ALSA Device"
+	mixer_control   "Master"
+}
