@@ -38,9 +38,6 @@ client.placeholder      #ECEFF4            #909090        #FFFFFF        #268BD2
 new_window pixel 0
 new_float pixel 0
 
-gaps inner 10
-gaps outer 0
-
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xautolock -time 5 -locker '/usr/bin/betterlockscreen -u ~/Pictures -l' -corners ---- -cornersize 30 &
@@ -71,39 +68,11 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 floating_modifier $mod
 
 # assign
-assign [class="libreoffice"] $ws1
-
-assign [class="jetbrains-toolbox"] $ws2
-assign [class="jetbrains-goland"] $ws2
-assign [class="jetbrains-idea"] $ws2
-assign [class="jetbrains-pycharm"] $ws2
-assign [class="jetbrains-clion"] $ws2
-assign [class="jetbrains-datagrip"] $ws2
-assign [class="jetbrains-webstorm"] $ws2
-
 assign [class="firefox"] $ws3
-assign [class="FirefoxNightly"] $ws3
 assign [class="Microsoft-edge-dev"] $ws3
-assign [class="Nightly"] $ws3
-
-assign [class="netease-cloud-music"] $ws4
-assign [class="FeelUOwn"] $ws4
-
-assign [class="Steam"] $ws5
-
-assign [class="VirtualBox Machine"] $ws6
-
-assign [class="Thunderbird"] $ws8
-assign [class="Qq"] $ws8
-assign [class="TelegramDesktop"] $ws8
 
 # for_window floating settings
 for_window [class="Qq"] floating enable
-for_window [class="Lxappearance"] floating enable
-for_window [class="Qalculate-gtk"] floating enable
-for_window [class="Nitrogen"] floating enable
-for_window [class="Steam"] floating enable
-for_window [class="words-picker"] floating enable
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id kitty
@@ -125,9 +94,13 @@ bindsym $mod1+z exec --no-startup-id zeal
 bindsym $mod+shift+e exec kitty -e ranger
 bindsym $mod+z exec --no-startup-id zathura
 bindsym $mod+shift+w exec --no-startup-id wps
+
+# lock screen
 bindsym $mod1+ctrl+Delete exec --no-startup-id betterlockscreen -l dim
+
 # set desktop background with custom effect
 exec --no-startup-id betterlockscreen -w dim
+
 # Alternative (set last used background)
 exec --no-startup-id source ~/.fehbg
 
@@ -244,30 +217,33 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
+set $ws9 "9"
 
 # Move to prev and next workspace
 bindsym $mod+bracketleft workspace prev
 bindsym $mod+bracketright workspace next
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -302,6 +278,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-gaps inner 8
+gaps inner 10
+gaps outer 0
 exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/*
-
