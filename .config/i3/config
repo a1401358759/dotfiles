@@ -26,7 +26,7 @@ font pango: Input Nerd Font 9
 title_align center
 show_marks yes
 
-for_window [class=".*"] title_format "%title"
+for_window [class=".*"] title_format "<b>%title</b>"
 
 # Theme colors
 client.focused     #ECEFF4      #5E81AC     #E5E9F0    #E5E9F0       #ECECEC
@@ -45,8 +45,9 @@ exec --no-startup-id xautolock -time 5 -locker '/usr/bin/betterlockscreen -u ~/P
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id setxkbmap -option "ctrl:swapcaps"
-exec --no-startup-id fcitx5 -d
-exec --no-startup-id dunst
+exec --no-startup-id fcitx5 &
+exec --no-startup-id dunst &
+exec --no-startup-id copyq &
 exec --no-startup-id mate-power-manager
 exec --no-startup-id picom -b
 exec --no-startup-id $HOME/.config/polybar/polybar.sh
@@ -73,6 +74,7 @@ assign [class="Microsoft-edge-dev"] $ws3
 
 # for_window floating settings
 for_window [class="Qq"] floating enable
+for_window [class="^copyq$"] floating enable
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id kitty
@@ -209,15 +211,15 @@ bindsym $mod+x focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
 
 # Move to prev and next workspace
 bindsym $mod+bracketleft workspace prev
