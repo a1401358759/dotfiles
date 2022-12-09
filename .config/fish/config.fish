@@ -16,6 +16,7 @@ alias hg='kitty +kitten hyperlinked_grep'
 alias v="nvim"
 alias ping="pingu"
 alias reload="exec fish"
+alias unset='set --erase'
 
 # Fish syntax highlighting
 set -g fish_color_autosuggestion '555'  'brblack'
@@ -44,4 +45,4 @@ set -g fish_color_valid_path --underline
 set PATH $PATH /home/turbo/.local/bin
 
 # Install Starship
-starship init fish | source
+# starship init fish | source
