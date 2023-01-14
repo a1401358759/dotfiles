@@ -47,7 +47,7 @@ exec --no-startup-id xautolock -time 5 -locker '/usr/bin/betterlockscreen -u ~/P
 # exec --no-startup-id setxkbmap -option "ctrl:swapcaps"
 exec --no-startup-id fcitx5 &
 exec --no-startup-id dunst &
-exec --no-startup-id copyq &
+# exec --no-startup-id copyq &
 exec --no-startup-id mate-power-manager
 exec --no-startup-id picom -b
 exec --no-startup-id $HOME/.config/polybar/polybar.sh
