@@ -21,7 +21,7 @@
     padding = 10
     horizontal_padding = 10
     frame_width = 0
-    frame_color = "#232323"
+    frame_color = "#8CAAEE"
     separator_color = frame
     sort = yes
     idle_threshold = 120
@@ -40,7 +40,7 @@
     show_indicators = yes
     icon_position = left
     max_icon_size = 48
-    icon_path = ~/.local/share/icons/Nordic-Darker/status/16/:~/.local/share/icons/Nordic-Darker/devices/16/:~/.local/share/icons/Nordic-Darker/apps/scalable/
+    icon_path = /home/charles/.local/share/icons/Nordic-Darker/status/16/:/home/charles/.local/share/icons/Nordic-Darker/devices/16/:/home/charles/.local/share/icons/Nordic-Darker/apps/scalable/
     # icon_path = /usr/share/icons/Arc/status/48/:/usr/share/icons/Arc/devices/48/:/usr/share/icons/Papirus/48x48/apps/
     sticky_history = yes
     history_length = 20
@@ -63,18 +63,19 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background="#2e3440"
-    foreground="#d8dee9"
+    background = "#303446"
+    foreground = "#C6D0F5"
     timeout = 3
 
 
 [urgency_normal]
-    background="#2e3440"
-    foreground="#d8dee9"
+    background = "#303446"
+    foreground = "#C6D0F5"
     timeout = 3
 
 
 [urgency_critical]
-    background="#2e3440"
-    foreground="#d8dee9"
+    background = "#303446"
+    foreground = "#C6D0F5"
+    frame_color = "#EF9F76"
     timeout = 0

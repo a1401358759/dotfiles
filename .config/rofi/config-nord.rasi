@@ -2,7 +2,7 @@
 
 configuration {
   show-icons:         true;
-  modi: "window,drun,ssh,run,filebrowser";
+  modi: "window,drun,ssh,run,filebrowser,file-browser-extended";
 }
 
 @theme "nord"

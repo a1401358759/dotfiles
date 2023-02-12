@@ -35,8 +35,12 @@ client.unfocused   #ECEFF4      #ECEFF4    #171717     #ECECEC       #ECECEC
 client.urgent           #BF616A            #BF616A        #ffffff        #268BD2
 client.placeholder      #ECEFF4            #909090        #FFFFFF        #268BD2
 
-new_window pixel 0
-new_float pixel 0
+
+# window border settings
+# default_border          none
+default_border          pixel 1
+# default_border          none
+default_floating_border pixel 1
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -47,12 +51,11 @@ exec --no-startup-id xautolock -time 5 -locker '/usr/bin/betterlockscreen -u ~/P
 # exec --no-startup-id setxkbmap -option "ctrl:swapcaps"
 exec --no-startup-id fcitx5 &
 exec --no-startup-id dunst &
-# exec --no-startup-id copyq &
 exec --no-startup-id mate-power-manager
-exec --no-startup-id picom -b
 exec --no-startup-id $HOME/.config/polybar/polybar.sh
-# exec --no-startup-id $HOME/.config/polybar/launch.sh --shapes
-
+# exec --no-startup-id picom -b
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf1
+exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/*
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -74,14 +77,9 @@ assign [class="Microsoft-edge-dev"] $ws3
 
 # for_window floating settings
 for_window [class="Qq"] floating enable
-for_window [class="^copyq$"] floating enable
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id kitty
-
-# Switch theme
-bindsym $mod+control+l exec "$HOME/.local/bin/switch-i3 l"
-bindsym $mod+control+n exec "$HOME/.local/bin/switch-i3 n"
 
 # Control mpd
 bindsym $mod+control+p exec mpc toggle
@@ -106,12 +104,10 @@ exec --no-startup-id betterlockscreen -w dim
 # Alternative (set last used background)
 exec --no-startup-id source ~/.fehbg
 
-for_window [class="^.*"] border pixel 1
-new_window 1pixel
 # kill focused window
 bindsym $mod+Shift+q kill
 # open browser
-bindsym $mod+b exec google-chrome-stable
+bindsym $mod+b exec microsoft-edge-stable
 # open music player
 bindsym $mod+m exec netease-cloud-music
 
@@ -122,12 +118,6 @@ bindsym Print exec --no-startup-id "scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 
 bindsym $mod+Print exec --no-startup-id "scrot -d 5 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'"
 # Take a full screenshot to clipboard(need xclip installed)
 bindsym control+Print exec --no-startup-id "scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
-
-# enable and disable touchpad
-# reference: https://wiki.archlinux.org/index.php/Libinput#Disable_touchpad
-bindsym $mod+control+e exec --no-startup-id "xinput enable 'DELL0828:00 06CB:7E7E Touchpad'"
-bindsym $mod+control+d exec --no-startup-id "xinput disable 'DELL0828:00 06CB:7E7E Touchpad'"
-
 
 # redshift modes
 bindsym $mod1+r mode "$mode_redshift"
@@ -152,10 +142,10 @@ bindsym $mod+q kill
 bindsym --release $mod1+q exec --no-startup-id xkill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec rofi -show drun
 # bindsym $mod+Tab exec rofi -show run
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/bin/launcher_ribbon
-bindsym $mod+Tab exec --no-startup-id ~/.config/rofi/bin/powermenu
+bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Escape exec --no-startup-id ~/.config/rofi/powermenu.sh
 
 focus_wrapping no
 # change focus
@@ -182,7 +172,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# use ; split in horizontal orientation
 bindsym $mod+semicolon split h
 # split in vertical orientation
 bindsym $mod+v split v
@@ -251,35 +241,27 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# resize window
+bindsym $mod+r mode "  "
+mode "  " {
+    # pressing left and up will shrink the window's width and height
+    # pressing right and down will grow the window's width and height
+    # bindsym $left   resize shrink width 4 px or 4 ppt
+    # bindsym $down   resize grow height 4 px or 4 ppt
+    # bindsym $up     resize shrink height 4 px or 4 ppt
+    # bindsym $right  resize grow width 4 px or 4 ppt
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left    resize shrink width 4 px or 4 ppt
+    bindsym Down    resize grow height 4 px or 4 ppt
+    bindsym Up      resize shrink height 4 px or 4 ppt
+    bindsym Right   resize grow width 4 px or 4 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    # back to normal: Enter or win+r
+    bindsym Return mode "default"
+    bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
 gaps inner 10
 gaps outer 0
-exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/*
