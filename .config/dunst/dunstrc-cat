@@ -40,7 +40,7 @@
     show_indicators = yes
     icon_position = left
     max_icon_size = 48
-    icon_path = /home/charles/.local/share/icons/Nordic-Darker/status/16/:/home/charles/.local/share/icons/Nordic-Darker/devices/16/:/home/charles/.local/share/icons/Nordic-Darker/apps/scalable/
+    icon_path = /home/turbo/.local/share/icons/Nordic-Darker/status/16/:/home/turbo/.local/share/icons/Nordic-Darker/devices/16/:/home/turbo/.local/share/icons/Nordic-Darker/apps/scalable/
     # icon_path = /usr/share/icons/Arc/status/48/:/usr/share/icons/Arc/devices/48/:/usr/share/icons/Papirus/48x48/apps/
     sticky_history = yes
     history_length = 20
