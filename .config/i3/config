@@ -259,6 +259,7 @@ mode "  " {
     bindsym Right   resize grow width 4 px or 4 ppt
 
     # back to normal: Enter or win+r
+    bindsym Escape mode "default"
     bindsym Return mode "default"
     bindsym $mod+r mode "default"
 }
