@@ -1,5 +1,7 @@
 if status is-interactive
 	# Commands to run in interactive sessions can go here
+	# yay -S pokemon-colorscripts-git
+	pokemon-colorscripts -r --no-title &
 end
 
 set TERM "xterm-256color"
