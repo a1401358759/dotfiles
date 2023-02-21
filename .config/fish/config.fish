@@ -1,8 +1,9 @@
 if status is-interactive
 	# Commands to run in interactive sessions can go here
-	# yay -S pokemon-colorscripts-git
-	pokemon-colorscripts -r --no-title &
 end
+
+# Some config
+set -g fish_greeting
 
 set TERM "xterm-256color"
 
@@ -20,6 +21,7 @@ alias v="nvim"
 alias ping="pingu"
 alias reload="exec fish"
 alias unset='set --erase'
+alias c="clear"
 
 # Fish syntax highlighting
 set -g fish_color_autosuggestion '555' 'brblack'
