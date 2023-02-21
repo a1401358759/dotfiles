@@ -23,24 +23,25 @@ font pango: Input Nerd Font 9
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
-title_align center
-show_marks yes
+# title_align center
+# show_marks yes
 
 for_window [class=".*"] title_format "<b>%title</b>"
+for_window [class=".*"] border pixel 3
 
 # Theme colors
-client.focused     #ECEFF4      #5E81AC     #E5E9F0    #E5E9F0       #ECECEC
-client.focused_inactive   #4C556A     #ECEFF4    #2E3440     #ECECEC       #ECECEC
-client.unfocused   #ECEFF4      #ECEFF4    #171717     #ECECEC       #ECECEC
-client.urgent           #BF616A            #BF616A        #ffffff        #268BD2
-client.placeholder      #ECEFF4            #909090        #FFFFFF        #268BD2
+# <colorclass>              <border>   <background> <text>  <indicator> <child_border>
+# client.focused            #ECEFF4     #5E81AC    #E5E9F0    #E5E9F0     #ECECEC
+# client.focused_inactive   #4C556A     #ECEFF4    #2E3440    #ECECEC     #ECECEC
+# client.unfocused          #ECEFF4     #ECEFF4    #171717    #ECECEC     #ECECEC
+# client.urgent             #BF616A     #BF616A    #ffffff    #268BD2
+# client.placeholder        #ECEFF4     #909090    #FFFFFF    #268BD2
 
+client.focused              #364670     #364670    #93CFBD    #364670     #364670
 
 # window border settings
-# default_border          none
-default_border          pixel 1
-# default_border          none
-default_floating_border pixel 1
+# default_border          pixel 0
+# default_floating_border pixel 0
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -48,14 +49,12 @@ exec --no-startup-id xautolock -time 5 -locker '/usr/bin/betterlockscreen -u ~/P
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-# exec --no-startup-id setxkbmap -option "ctrl:swapcaps"
 exec --no-startup-id fcitx5 &
 exec --no-startup-id dunst &
 exec --no-startup-id mate-power-manager
 exec --no-startup-id $HOME/.config/polybar/polybar.sh
-# exec --no-startup-id picom -b
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf1
-exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/*
+exec --no-startup-id picom -b --config ~/.config/picom/picom.conf --experimental-backends --xrender-sync-fence
+exec --no-startup-id feh --randomize --bg-fill ~/Pictures/*
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -264,5 +263,6 @@ mode "  " {
     bindsym $mod+r mode "default"
 }
 
-gaps inner 10
-gaps outer 0
+gaps inner 5
+gaps outer 5
+gaps bottom 5
