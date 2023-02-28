@@ -22,6 +22,7 @@ alias ping="pingu"
 alias reload="exec fish"
 alias unset='set --erase'
 alias c="clear"
+alias n="neofetch"
 
 # Fish syntax highlighting
 set -g fish_color_autosuggestion '555' 'brblack'
