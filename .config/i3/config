@@ -27,7 +27,7 @@ font pango: Input Nerd Font 9
 # show_marks yes
 
 for_window [class=".*"] title_format "<b>%title</b>"
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 2
 
 # Theme colors
 # <colorclass>              <border>   <background> <text>  <indicator> <child_border>
@@ -55,6 +55,8 @@ exec --no-startup-id mate-power-manager
 exec --no-startup-id $HOME/.config/polybar/polybar.sh
 exec --no-startup-id picom -b --config ~/.config/picom/picom.conf --experimental-backends --xrender-sync-fence
 exec --no-startup-id feh --randomize --bg-fill ~/Pictures/*
+# paru autotiling (for auto layouts)
+exec_always --no-startup-id autotiling
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -71,8 +73,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 floating_modifier $mod
 
 # assign
-assign [class="firefox"] $ws3
-assign [class="Microsoft-edge-dev"] $ws3
+# assign [class="firefox"] $ws3
+# assign [class="Microsoft-edge-dev"] $ws3
 
 # for_window floating settings
 for_window [class="Qq"] floating enable
@@ -266,3 +268,6 @@ mode "  " {
 gaps inner 5
 gaps outer 5
 gaps bottom 5
+
+# paru i3-gaps-rounded (for rounded window)
+# border_radius 0
