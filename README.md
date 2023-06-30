@@ -64,3 +64,4 @@
 - PDF 阅读器：zathura
 - 文本编辑器：nvim
 - 屏幕亮度调节器：light
+- 字体：JetBrainsMono Nerd Font、Fira Code Mono
