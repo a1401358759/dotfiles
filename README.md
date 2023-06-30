@@ -1,5 +1,7 @@
 # 配置過程
 
+[https://github.com/SolDoesTech/HyprV4](https://github.com/SolDoesTech/HyprV4)
+
 ### 一个基本的美化分为以下几部分
 
 - 状态栏美化
