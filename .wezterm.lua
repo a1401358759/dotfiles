@@ -21,7 +21,7 @@ config.window_padding = {
 }
 config.color_scheme = "GruvboxDark"
 config.font = wezterm.font({
-	family = "JetBrains Mono",
+	family = "JetBrainsMono Nerd Font",
 	weight = "DemiBold",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
@@ -48,6 +48,7 @@ config.tiling_desktop_environments = {
 	"X11 dwm",
 	"Wayland hyprland",
 }
+config.disable_default_key_bindings = true
 config.mouse_bindings = {
 	-- 右键粘贴
 	{
@@ -104,10 +105,11 @@ config.keys = {
 	{ key = "7", mods = "CTRL", action = wezterm.action({ ActivateTab = 6 }) },
 	{ key = "8", mods = "CTRL", action = wezterm.action({ ActivateTab = 7 }) },
 	{ key = "9", mods = "CTRL", action = wezterm.action({ ActivateTab = 8 }) },
-	{ key = "LeftArrow", mods = "CTRL", action = wezterm.action({ MoveTabRelative = -1 }) },
-	{ key = "RightArrow", mods = "CTRL", action = wezterm.action({ MoveTabRelative = 1 }) },
-	{ key = "LeftArrow", mods = "ALT", action = wezterm.action({ ActivateTabRelative = -1 }) },
-	{ key = "RightArrow", mods = "ALT", action = wezterm.action({ ActivateTabRelative = 1 }) },
+	{ key = "LeftArrow", mods = "ALT", action = wezterm.action({ MoveTabRelative = -1 }) },
+	{ key = "RightArrow", mods = "ALT", action = wezterm.action({ MoveTabRelative = 1 }) },
+	{ key = "LeftArrow", mods = "CTRL", action = wezterm.action({ ActivateTabRelative = -1 }) },
+	{ key = "RightArrow", mods = "CTRL", action = wezterm.action({ ActivateTabRelative = 1 }) },
+	{ key = "t", mods = "SHIFT|CTRL", action = wezterm.action({ SpawnTab = "DefaultDomain" }) },
 	{ key = "h", mods = "SHIFT|CTRL", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
 	{ key = "j", mods = "SHIFT|CTRL", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
 	{ key = "k", mods = "SHIFT|CTRL", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
@@ -118,6 +120,7 @@ config.keys = {
 	{ key = "x", mods = "SHIFT|CTRL", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 	{ key = "-", mods = "CTRL", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
 	{ key = "\\", mods = "CTRL", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+	{ key = "w", mods = "CTRL", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
 	{ key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
 }
 
