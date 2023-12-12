@@ -14,10 +14,10 @@ end
 -- config.integrated_title_buttons = { "Hide", "Maximize", "Close" }
 -- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.window_padding = {
-	top = "15px",
-	right = "5px",
-	bottom = "5px",
-	left = "5px",
+	top = 5,
+	right = 5,
+	bottom = 5,
+	left = 5,
 }
 config.color_scheme = "GruvboxDark"
 config.font = wezterm.font({
@@ -25,20 +25,25 @@ config.font = wezterm.font({
 	weight = "DemiBold",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
+config.animation_fps = 60
+config.max_fps = 60
 config.font_size = 12
 config.line_height = 1.2
 config.enable_wayland = false
-config.front_end = "OpenGL"
-config.use_fancy_tab_bar = true
+config.front_end = "WebGpu"
+config.webgpu_power_preference = "HighPerformance"
+config.use_fancy_tab_bar = false
 config.enable_tab_bar = true
 config.show_tabs_in_tab_bar = true
+config.switch_to_last_active_tab_when_closing_tab = true
+config.inactive_pane_hsb = { saturation = 1.0, brightness = 1.0 }
 config.check_for_updates = false
 config.hide_tab_bar_if_only_one_tab = false
 config.window_background_opacity = 0.8
 config.adjust_window_size_when_changing_font_size = false -- If you use a tiling window manager then you may wish to set this to false
 config.automatically_reload_config = true
-config.tab_bar_at_bottom = false
-config.tab_max_width = 20
+config.tab_bar_at_bottom = true
+config.tab_max_width = 25
 config.term = "xterm-256color"
 config.set_environment_variables = {}
 config.tiling_desktop_environments = {
@@ -47,6 +52,11 @@ config.tiling_desktop_environments = {
 	"X11 i3",
 	"X11 dwm",
 	"Wayland hyprland",
+}
+config.window_frame = {
+	active_titlebar_bg = "#090909",
+	-- font = fonts.font,
+	-- font_size = fonts.font_size,
 }
 config.disable_default_key_bindings = true
 config.mouse_bindings = {
@@ -70,14 +80,6 @@ config.mouse_bindings = {
 		action = "OpenLinkAtMouseCursor",
 	},
 }
-
-for _, gpu in ipairs(wezterm.gui.enumerate_gpus()) do
-	if gpu.backend == "Vulkan" and gpu.device_type == "IntegratedGpu" then
-		config.webgpu_preferred_adapter = gpu
-		config.front_end = "WebGpu"
-		break
-	end
-end
 
 local act = wezterm.action
 config.keys = {
