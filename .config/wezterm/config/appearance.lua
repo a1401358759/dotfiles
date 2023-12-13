@@ -20,7 +20,7 @@ return {
 	-- background
 	background = {
 		{
-			source = { File = wezterm.config_dir .. "/backdrops/space.jpg" },
+			source = { File = wezterm.config_dir .. "/backdrops/astro-jelly.jpg" },
 		},
 		{
 			source = { Color = colors.background },
