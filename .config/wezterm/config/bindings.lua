@@ -41,7 +41,11 @@ local keys = {
 	{ key = "RightArrow", mods = "ALT", action = wezterm.action({ MoveTabRelative = 1 }) },
 	{ key = "LeftArrow", mods = "CTRL", action = wezterm.action({ ActivateTabRelative = -1 }) },
 	{ key = "RightArrow", mods = "CTRL", action = wezterm.action({ ActivateTabRelative = 1 }) },
-	{ key = "t", mods = "SHIFT|CTRL", action = wezterm.action({ SpawnTab = "DefaultDomain" }) },
+	{
+		key = "t",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action({ SpawnCommandInNewTab = { cwd = wezterm.home_dir, domain = "CurrentPaneDomain" } }),
+	},
 	{ key = "h", mods = "SHIFT|CTRL", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
 	{ key = "j", mods = "SHIFT|CTRL", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
 	{ key = "k", mods = "SHIFT|CTRL", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
