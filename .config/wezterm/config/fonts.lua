@@ -3,7 +3,7 @@ local platform = require("utils.platform")
 
 local font = {
 	family = "JetBrainsMono Nerd Font",
-	weight = "DemiBold",
+	weight = "Medium",
 	harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
 }
 -- local font_size = platform().is_mac and 12 or 9
