@@ -57,7 +57,7 @@ local keys = {
 	{ key = "-", mods = "CTRL", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
 	{ key = "\\", mods = "CTRL", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
 	{ key = "w", mods = "CTRL", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
-	{ key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
+	{ key = "l", mods = "ALT|CTRL", action = wezterm.action.ShowLauncher },
 }
 
 local key_tables = {
