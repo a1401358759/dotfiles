@@ -41,7 +41,8 @@ M.set_title = function(process_name, base_title, max_width, inset)
 	inset = inset or 6
 
 	if process_name:len() > 0 then
-		title = process_name .. " ~ " .. base_title
+		-- title = process_name .. "~" .. base_title
+		title = base_title
 	else
 		title = base_title
 	end
@@ -51,7 +52,7 @@ M.set_title = function(process_name, base_title, max_width, inset)
 		title = wezterm.truncate_right(title, title:len() - diff)
 	end
 
-	return title
+	return " " .. title .. " "
 end
 
 M.check_if_admin = function(p)
