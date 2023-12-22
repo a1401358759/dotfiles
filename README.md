@@ -17,7 +17,7 @@
 - 终端：kitty
 - 程序启动器：rofi
 - 壁纸设置器：feh
-- 特效合成器：[https://github.com/jonaburg/picom](picom)
+- 特效合成器：[picom](https://github.com/jonaburg/picom)
 - 截图工具：flameshot
 - 输入法：fcitx5
 - 状态栏：polybar
