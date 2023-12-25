@@ -1,5 +1,11 @@
 local wezterm = require("wezterm")
 local colors = require("colors.custom")
+local my_gruvbox = wezterm.color.get_builtin_schemes()["GruvboxDark"]
+
+-- transparent tab_bar
+my_gruvbox.tab_bar = {
+	background = "rgba(0,0,0,0)",
+}
 
 return {
 	animation_fps = 60,
@@ -12,12 +18,18 @@ return {
 	tab_bar_at_bottom = true,
 	term = "xterm-256color",
 	window_background_opacity = 0.8,
+	color_schemes = {
+		-- Override the builtin GruvboxDark scheme with our modification.
+		["GruvboxDark"] = my_gruvbox,
+		-- We can also give it a different name if we don't want to override the default
+		["GruvboxCustom"] = my_gruvbox,
+	},
 
-	-- color scheme
+	-- set color scheme
 	-- colors = colors,
-	color_scheme = "GruvboxDark",
+	color_scheme = "GruvboxCustom",
 
-	-- background
+	-- set background
 	background = {
 		{
 			source = { File = wezterm.config_dir .. "/backdrops/astro-jelly.jpg" },
@@ -40,6 +52,7 @@ return {
 	tab_max_width = 25,
 	show_tab_index_in_tab_bar = false,
 	switch_to_last_active_tab_when_closing_tab = true,
+	show_new_tab_button_in_tab_bar = false,
 
 	-- window
 	window_padding = {
