@@ -31,14 +31,14 @@ return {
 
 	-- set background
 	background = {
-		{
-			source = { File = wezterm.config_dir .. "/backdrops/astro-jelly.jpg" },
-		},
+		-- {
+		--  source = { File = wezterm.config_dir .. "/backdrops/astro-jelly.jpg" },
+		-- },
 		{
 			source = { Color = colors.background },
 			height = "100%",
 			width = "100%",
-			opacity = 0.80,
+			opacity = 0.90,
 		},
 	},
 
