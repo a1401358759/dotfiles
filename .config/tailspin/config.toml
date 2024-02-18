@@ -1,0 +1,58 @@
+[date]
+style = { fg = "magenta" }
+# To shorten the date, uncomment the line below
+# shorten = { to = "␣", style = { fg = "magenta" } }
+
+[time]
+time = { fg = "blue" }
+zone = { fg = "red" }
+# To shorten the time, uncomment the line below
+# shorten = { to = "␣", style = { fg = "blue" } }
+
+[[keywords]]
+words = ['null', 'true', 'false']
+style = { fg = "red", italic = true }
+
+[[keywords]]
+words = ['GET']
+style = { fg = "black", bg = "green" }
+border = true
+
+# You can add as many keywords as you'd like
+
+[url]
+http = { faint = true }
+https = { bold = true }
+host = { fg = "blue", faint = true }
+path = { fg = "blue" }
+query_params_key = { fg = "magenta" }
+query_params_value = { fg = "cyan" }
+symbols = { fg = "red" }
+
+[number]
+style = { fg = "cyan" }
+
+[ip]
+segment = { fg = "blue", italic = true }
+separator = { fg = "red" }
+
+[quotes]
+style = { fg = "yellow" }
+token = '"'
+
+[path]
+segment = { fg = "green", italic = true }
+separator = { fg = "yellow" }
+
+[uuid]
+segment = { fg = "blue", italic = true }
+separator = { fg = "red" }
+
+[key_value]
+key = { faint = true }
+separator = { fg = "white" }
+
+[process]
+name = { fg = "green" }
+separator = { fg = "red" }
+id = { fg = "yellow" }

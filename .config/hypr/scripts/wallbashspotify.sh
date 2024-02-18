@@ -2,10 +2,10 @@
 
 # set variables
 
-ScrDir=`dirname $(realpath $0)`
+ScrDir=`dirname "$(realpath "$0")"`
 source $ScrDir/globalcontrol.sh
-scol="$HOME/.config/spicetify/Themes/Sleek/color.ini"
-dcol="$HOME/.config/spicetify/Themes/Sleek/Wall-Dcol.ini"
+scol="${XDG_CONFIG_HOME:-$HOME/.config}/spicetify/Themes/Sleek/color.ini"
+dcol="${XDG_CONFIG_HOME:-$HOME/.config}/spicetify/Themes/Sleek/Wall-Dcol.ini"
 
 # regen conf
 
