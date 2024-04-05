@@ -7,9 +7,9 @@ set -g fish_greeting
 
 set TERM xterm-256color
 
-alias ll="exa --icons -l --color auto -F -a"
-alias l="exa --icons -l --color auto -F -a"
-alias ls="exa --icons -l --color auto -F"
+alias ll="eza --icons -l --color auto -F -a"
+alias l="eza --icons -l --color auto -F -a"
+alias ls="eza --icons -l --color auto -F"
 # alias ps="procs"
 alias gpullo="git pull origin"
 alias icat="kitty +kitten icat"
@@ -60,4 +60,4 @@ zoxide init fish | source
 atuin init fish | source
 
 # Install Starship
-# starship init fish | source
+starship init fish | source
