@@ -27,7 +27,7 @@ font JetBrainsMono Nerd Font 9
 # show_marks yes
 
 for_window [class=".*"] title_format "<b>%title</b>"
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 0
 
 # Theme colors
 # <colorclass>              <border>   <background> <text>  <indicator> <child_border>
@@ -147,7 +147,7 @@ bindsym --release $mod1+q exec --no-startup-id xkill
 # start dmenu (a program launcher)
 bindsym $mod+Tab exec --no-startup-id rofi -show window -theme ~/.config/rofi/launchers/type-6/style-4.rasi
 bindsym $mod+d exec --no-startup-id rofi -show drun -theme $HOME/.config/rofi/launchers/type-6/style-4.rasi
-bindsym $mod+Escape exec --no-startup-id ~/.config/rofi/powermenu/type-2/powermenu.sh
+bindsym $mod+Escape exec --no-startup-id ~/.config/rofi/powermenu/type-6/powermenu.sh
 
 focus_wrapping no
 # change focus

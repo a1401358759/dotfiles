@@ -1,5 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+  # Commands to run in interactive sessions can go here
 end
 
 # Some config
@@ -7,9 +7,9 @@ set -g fish_greeting
 
 set TERM xterm-256color
 
-alias ll="eza --icons -l --color auto -F -a"
-alias l="eza --icons -l --color auto -F -a"
-alias ls="eza --icons -l --color auto -F"
+alias ll="eza --icons auto --color auto --time-style '+%Y-%m-%d %H:%M:%S' -ghla -F"
+alias l="eza --icons auto --color auto --time-style '+%Y-%m-%d %H:%M:%S' -ghla -F"
+alias ls="eza --icons auto --color auto --time-style '+%Y-%m-%d %H:%M:%S' -ghl -F"
 # alias ps="procs"
 alias gpullo="git pull origin"
 alias icat="kitty +kitten icat"
@@ -49,6 +49,8 @@ set -g fish_color_selection white --bold '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
+# no_proxy
+set -Ux no_proxy "127.0.0.1,.devops.com,localhost,local,.local,172.28.0.0/16"
 # Created by `pipx` on 2022-12-09 03:14:10
 set PATH $PATH /home/turbo/.local/bin
 # bob nvim
