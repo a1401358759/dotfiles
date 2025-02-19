@@ -1,19 +1,81 @@
-# 字体设置
-font-family = JetBrainsMono Nerd Font
+term = xterm-256color
 
-font-style = "Medium"
-font-style-bold = "Bold"
-font-style-bold-italic = "Bold Italic"
-# 稍微减小字体大小，可以根据你的屏幕和喜好调整
-font-size = 12
-# 字体加粗，尝试更自然的渲染效果
-font-thicken = true
+# 背景透明度
+background-opacity = 0.8
+# 背景模糊半径
+background-blur-radius = 10
 
-grapheme-width-method = "unicode"
-# 不调整单元格宽度，避免显示问题
-adjust-cell-width = 0%
+# Leading
 adjust-cell-height = 20%
 
+macos-option-as-alt = true
+
+fullscreen = false
+
+# visible-menu
+macos-non-native-fullscreen = visible-menu
+# macos-titlebar-tabs=false # FIXME: deprecated?
+macos-titlebar-style = hidden
+
+window-decoration = false
+window-colorspace = display-p3
+window-vsync = true
+window-padding-x = 5
+window-padding-y = 10,0
+# window-padding-x = 10
+# window-padding-y = 10
+window-padding-balance = true
+window-padding-color = background
+window-save-state = always
+
+shell-integration = fish
+shell-integration-features = cursor,sudo,title
+
+cursor-style = block
+cursor-style-blink = true
+
+# clipboard
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = clipboard
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = false
+
+confirm-close-surface = false
+quit-after-last-window-closed = true
+
+mouse-hide-while-typing = true
+mouse-shift-capture = true
+
+quick-terminal-position = left
+
+# font
+font-family             = "JetBrainsMono Nerd Font"
+font-style              = "Medium"
+font-family-bold        = "JetBrainsMono Nerd Font"
+font-style-bold         = "ExtraBold"
+font-family-italic      = "JetBrainsMono Nerd Font"
+font-style-italic       = "Italic"
+font-family-bold-italic = "JetBrainsMono Nerd Font"
+font-style-bold-italic  = "ExtraBold Italic"
+
+font-size = 12
+font-thicken = true
+
+font-feature = zero
+# font-feature = ss01 # serif f
+# font-feature = ss02 # curly l
+font-feature = ss03
+font-feature = ss04
+font-feature = ss05
+font-feature = ss06
+font-feature = ss07
+font-feature = ss08
+font-feature = liga
+font-feature = dlig
+font-feature = calt
+
+# color theme
 # 优化后的配色方案，提高对比度和可读性
 # 稍微加深背景色，增加对比度
 palette = 0=#1e222a
@@ -59,40 +121,6 @@ selection-background = 405060
 selection-foreground = dcdfe4
 # 保持选择区域反色
 selection-invert-fg-bg = true
-
-cursor-style = "bar"
-cursor-style-blink = true
-# 减少滚动历史，节省内存
-scrollback-limit = 20000
-# 减少水平边距，节省屏幕空间
-window-padding-x = 10
-# 统一垂直边距
-window-padding-y = 10
-
-# 窗口设置
-window-padding-balance = true
-window-colorspace = "display-p3"
-window-save-state = "always"
-
-# 背景透明度
-background-opacity = 0.8
-# 背景模糊半径
-background-blur-radius = 20
-
-# 更安全的快捷键，避免冲突
-keybind = global:alt+grave_accent=toggle_quick_terminal
-
-# 鼠标相关
-mouse-hide-while-typing = true
-mouse-scroll-multiplier = 2
-
-# macOS 特定
-macos-titlebar-style = hidden
-
-# clipboard config
-copy-on-select = true
-clipboard-read = "allow"
-clipboard-write = "allow"
 
 # 新窗口和标签是否继承工作目录。
 window-inherit-working-directory = false
