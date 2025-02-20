@@ -132,3 +132,5 @@ keybind = alt+right=goto_split:right
 keybind = alt+up=goto_split:up
 keybind = alt+down=goto_split:down
 keybind = ctrl+w=close_surface
+
+app-notifications = false
