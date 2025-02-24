@@ -1,5 +1,22 @@
-[plugin]
-deps = [{ use = "llanosrocas/yaziline", rev = "5886330" }, { use = "yazi-rs/plugins:full-border", rev = "c578505" }, { use = "yazi-rs/plugins:git", rev = "c578505" }, { use = "Rolv-Apneseth/starship", rev = "20d5a4d" }]
+[[plugin.deps]]
+use = "llanosrocas/yaziline"
+rev = "e06c47f"
+hash = "7df84299e89ffefd4686d1e20a295c8a"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "5186af7"
+hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "5186af7"
+hash = "771f18427fb75fb19990ce602bb322f4"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "6c639b4"
+hash = "5614c46d5de76623c283d415bfac8025"
 
 [flavor]
 deps = []
