@@ -83,7 +83,7 @@ read_only_style = ''
 
 [git_branch]
 format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $branch](fg:foreground bg:box)'
-symbol = ' '
+symbol = '  '
 
 [git_status]
 format = '[$all_status](fg:green bg:box)[](fg:box)'
