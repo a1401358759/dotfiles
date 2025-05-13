@@ -1,9 +1,9 @@
 term = xterm-256color
 
 # 背景透明度
-background-opacity = 0.8
+background-opacity = 0.7
 # 背景模糊半径
-background-blur-radius = 10
+background-blur-radius = 8
 
 # Leading
 adjust-cell-height = 20%
@@ -47,16 +47,16 @@ mouse-shift-capture = true
 quick-terminal-position = left
 
 # font
-font-family             = "JetBrainsMono Nerd Font"
+font-family             = "Maple Mono NF CN"
 font-style              = "SemiBold"
-font-family-bold        = "JetBrainsMono Nerd Font"
+font-family-bold        = "Maple Mono NF CN"
 font-style-bold         = "Bold"
-font-family-italic      = "JetBrainsMono Nerd Font"
+font-family-italic      = "Maple Mono NF CN"
 font-style-italic       = "Italic"
-font-family-bold-italic = "JetBrainsMono Nerd Font"
+font-family-bold-italic = "Maple Mono NF CN"
 font-style-bold-italic  = "Bold Italic"
 
-font-size = 12
+font-size = 11
 font-thicken = true
 
 font-feature = zero
@@ -124,7 +124,7 @@ window-inherit-working-directory = false
 
 gtk-titlebar = false
 gtk-wide-tabs = false
-gtk-tabs-location = "bottom"
+gtk-tabs-location = "top"
 
 # keybindings
 keybind = alt+left=goto_split:left
@@ -132,5 +132,16 @@ keybind = alt+right=goto_split:right
 keybind = alt+up=goto_split:up
 keybind = alt+down=goto_split:down
 keybind = ctrl+w=close_surface
+keybind = ctrl+shift+l=next_tab
+keybind = ctrl+shift+h=previous_tab
+keybind = ctrl+one=goto_tab:1
+keybind = ctrl+two=goto_tab:2
+keybind = ctrl+three=goto_tab:3
+keybind = ctrl+four=goto_tab:4
+keybind = ctrl+five=goto_tab:5
+keybind = ctrl+six=goto_tab:6
+keybind = ctrl+seven=goto_tab:7
+keybind = ctrl+eight=goto_tab:8
+keybind = ctrl+nine=last_tab
 
 app-notifications = false
