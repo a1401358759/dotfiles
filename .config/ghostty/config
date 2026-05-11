@@ -1,147 +1,101 @@
-term = xterm-256color
+# ============================================
+  # Ghostty Terminal - Complete Configuration
+  # ============================================
+  # File: ~/.config/ghostty/config
+  # Reload: Cmd+Shift+, (macOS)
+  # View options: ghostty +show-config --default --docs
 
-# 背景透明度
-background-opacity = 0.7
-# 背景模糊半径
-background-blur-radius = 8
+# term = xterm-256color
+# 新窗口和标签是否继承工作目录。
+window-inherit-working-directory = false
+tab-inherit-working-directory = false
+macos-icon = paper
 
-# Leading
-adjust-cell-height = 20%
+gtk-tabs-location = bottom
+gtk-toolbar-style = flat
 
-macos-option-as-alt = true
+# --- Typography ---
+font-family = "Maple Mono NF CN"
+# font-family = "JetBrainsMono Nerd Font"
+font-size = 15
+font-thicken = true
+adjust-cell-height = 6
 
-fullscreen = false
+# --- Theme and Colors ---
+# theme = Kitty Default
+# theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+theme = dark:TokyoNight Night,light:TokyoNight Day
 
-# visible-menu
-macos-non-native-fullscreen = visible-menu
-macos-titlebar-style = hidden
-
-window-decoration = false
-window-colorspace = display-p3
-window-vsync = true
+# --- Window and Appearance ---
+background-opacity = 1
+background-blur-radius = 20
+macos-titlebar-style = transparent
 window-padding-x = 5
 window-padding-y = 0,0
 window-padding-balance = true
-window-padding-color = background
-window-save-state = always
+window-save-state = never
+window-width = 80
+window-height = 24
+window-theme = auto
+window-decoration = true
 
-shell-integration = fish
-shell-integration-features = cursor,sudo,title
-
+# --- Cursor ---
 cursor-style = block
 cursor-style-blink = true
+cursor-opacity = 0.8
 
-# clipboard
+# --- Mouse ---
+mouse-hide-while-typing = true
+copy-on-select = clipboard
+
+# --- Quick Terminal (Quake-style dropdown) ---
+quick-terminal-position = top
+quick-terminal-screen = mouse
+quick-terminal-autohide = true
+quick-terminal-animation-duration = 0.15
+
+# --- Close behavior ---
+confirm-close-surface = false
+
+# --- Security ---
+clipboard-paste-protection = true
+clipboard-paste-bracketed-safe = true
 clipboard-read = allow
 clipboard-write = allow
-copy-on-select = clipboard
-clipboard-trim-trailing-spaces = true
-clipboard-paste-protection = false
 
-confirm-close-surface = false
-quit-after-last-window-closed = true
+# --- Shell Integration ---
+shell-integration = detect
+shell-integration-features = cursor,sudo,no-title,ssh-env,ssh-terminfo,path
 
-mouse-hide-while-typing = true
-mouse-shift-capture = true
+# --- Keybindings ---
+# Tabs
+keybind = cmd+t=new_tab
+keybind = cmd+shift+left=previous_tab
+keybind = cmd+shift+right=next_tab
+keybind = cmd+w=close_surface
 
-quick-terminal-position = left
+# Splits
+keybind = cmd+d=new_split:right
+keybind = cmd+shift+d=new_split:down
+keybind = cmd+alt+left=goto_split:left
+keybind = cmd+alt+right=goto_split:right
+keybind = cmd+alt+up=goto_split:top
+keybind = cmd+alt+down=goto_split:bottom
 
-# font
-font-family             = "Maple Mono NF CN"
-font-style              = "SemiBold"
-font-family-bold        = "Maple Mono NF CN"
-font-style-bold         = "Bold"
-font-family-italic      = "Maple Mono NF CN"
-font-style-italic       = "Italic"
-font-family-bold-italic = "Maple Mono NF CN"
-font-style-bold-italic  = "Bold Italic"
+# Font size
+keybind = cmd+plus=increase_font_size:1
+keybind = cmd+minus=decrease_font_size:1
+keybind = cmd+zero=reset_font_size
 
-font-size = 11
-font-thicken = true
+# Quick terminal global hotkey
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
 
-font-feature = zero
-# font-feature = ss01 # serif f
-# font-feature = ss02 # curly l
-font-feature = ss03
-font-feature = ss04
-font-feature = ss05
-font-feature = ss06
-font-feature = ss07
-font-feature = ss08
-font-feature = liga
-font-feature = dlig
-font-feature = calt
+# Splits management
+keybind = cmd+shift+e=equalize_splits
+keybind = cmd+shift+f=toggle_split_zoom
 
-# color theme
-# 优化后的配色方案，提高对比度和可读性
-# 稍微加深背景色，增加对比度
-palette = 0=#1e222a
-# 调整红色
-palette = 1=#e06c75
-# 调整绿色
-palette = 2=#98c379
-# 调整黄色
-palette = 3=#e5c07b
-# 调整蓝色
-palette = 4=#61afef
-# 调整紫色
-palette = 5=#c678dd
-# 调整青色
-palette = 6=#56b6c2
-# 调整亮白色，与背景色有更好对比
-palette = 7=#dcdfe4
-# 调整暗灰色
-palette = 8=#545862
-# 调整红色
-palette = 9=#e06c75
-# 调整绿色
-palette = 10=#98c379
-# 调整黄色
-palette = 11=#e5c07b
-# 调整蓝色
-palette = 12=#61afef
-# 调整紫色
-palette = 13=#c678dd
-# 调整青色
-palette = 14=#56b6c2
-# 纯白色，用于某些强调文本
-palette = 15=#ffffff
-# 与 palette 0 相同
-background = 1e222a
-# 与 palette 7 相同，提高对比度
-foreground = dcdfe4
-# 使用黄色作为光标颜色，更容易识别
-cursor-color = e5c07b
-# 调整选择背景色，提高对比度
-selection-background = 405060
-# 调整选择前景色
-selection-foreground = dcdfe4
-# 保持选择区域反色
-selection-invert-fg-bg = true
+# Reload config
+keybind = cmd+shift+comma=reload_config
 
-# 新窗口和标签是否继承工作目录。
-window-inherit-working-directory = false
-
-gtk-titlebar = false
-gtk-wide-tabs = false
-gtk-tabs-location = "top"
-
-# keybindings
-keybind = alt+left=goto_split:left
-keybind = alt+right=goto_split:right
-keybind = alt+up=goto_split:up
-keybind = alt+down=goto_split:down
-keybind = ctrl+w=close_surface
-keybind = ctrl+shift+l=next_tab
-keybind = ctrl+shift+h=previous_tab
-keybind = ctrl+one=goto_tab:1
-keybind = ctrl+two=goto_tab:2
-keybind = ctrl+three=goto_tab:3
-keybind = ctrl+four=goto_tab:4
-keybind = ctrl+five=goto_tab:5
-keybind = ctrl+six=goto_tab:6
-keybind = ctrl+seven=goto_tab:7
-keybind = ctrl+eight=goto_tab:8
-keybind = ctrl+nine=last_tab
-
-app-notifications = false
+# --- Performance ---
+scrollback-limit = 25000000
